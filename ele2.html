@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" rel="stylesheet" href="assets/css/style.css">   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet"/>
+    <!--- AOS.js-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <header>
+      <p>Projekt Dyplomowy Inżynierski</p>
+
+      <div class="navbar">
+        <a href="index.html">Gitara Akustyczna Fingerstyle</a>
+        <a href="git2.html">Gitara Akustyczna Kostka</a>
+        <a href="ele1.html">Gitara Elektryczna Crunch</a>
+        <a href="ele2.html">Gitara Elektryczna Drive</a>
+        <a href="tele.html">Gitara Klasyczna</a>
+    </div>
+    </header>
+
+      <div class="main">
+    
+      
+      <!--- Kontener z zawartością strony --->
+      <div class="kont">
+
+            <!--- Nazwa mikrofonu --->
+        <div class="container">
+          <p id="microphone">title.mp3</p>
+        </div>
+        
+
+        <!--- Sekcja z obrazkami (podzielone na kolumny) --->
+        <div class="container"> 
+          <div class="row">
+            <div class="col-md" id="cf7">
+              <img class ="opaque" src="FrontPictures/Elektryczna/Shure_SM57.JPG"/>
+              <img src="FrontPictures/Elektryczna/Audix_i5.JPG" />
+              <img src="FrontPictures/Elektryczna/Lewitt_MTP440.JPG" />
+              <img src="FrontPictures/Elektryczna/Sennheiser_MD421.JPG"/>
+              <img src="FrontPictures/Elektryczna/Shure_SM7B.JPG" />
+              <img src="FrontPictures/Elektryczna/Beyerdynamic_M160.JPG"/>
+            </div>
+            <div class="col-md shorter-img">
+              <img id="mic_image">
+            </div>
+            <div class="col-md" id="cf8">
+              <img class ="opaque1" src="SidePictures/Elektryczna/Shure_SM57.JPG"/>
+              <img src="SidePictures/Elektryczna/Audix_i5.JPG" />
+              <img src="SidePictures/Elektryczna/Lewitt_MTP440.JPG" />
+              <img src="SidePictures/Elektryczna/Sennheiser_MD421.JPG"/>
+              <img src="SidePictures/Elektryczna/Shure_SM7B.JPG" />
+              <img src="SidePictures/Elektryczna/Beyerdynamic_M160.JPG"/>
+            </div>
+          </div>
+        </div>  
+        
+
+              <!-- Wybór techniki mikrofonowej i mikrofonu-->
+        <div class="dropdown text-center" id="cf7_controls"  style="margin-top: 15px;">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false">
+            Wybierz mikrofon
+          </button>
+          <ul class="dropdown-menu" id="cf8_controls" aria-labelledby="dropdownMenuButton">
+            <span class="selected"><li><a class="dropdown-item" href="#" id="sm57">Shure SM57</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="i5">Audix i5</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="mtp440">Lewitt MTP440</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="md421">Sennheiser MD421</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="sm7b">Shure SM7B</a> </li></span>
+            <span><li><a class="dropdown-item" href="#" id="m160">Beyerdynamic M160</a> </li></span>
+          </ul>
+        </div>
+
+            
+
+        <!--- Część środkowa, zawierająca przycisk play/pause --->
+        <div class="container" style="background-color: rgba(61, 59, 59, 0.555); border-radius: 25px; box-shadow: 2px solid #000;">
+        <div class="middle">
+            <button onclick="justplay()" id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+        </div>
+
+        <!--- Część zawierająca suwaki głośności i przewijania --->
+        
+        <div class="duration">
+          <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+        </div>
+        
+        <div class="volume">
+        <p id="volume_show">90</p>
+        <i class="fa fa-volume-up" aria-hidden="true" onclick="mute_sound()" id="volume_icon"></i>
+        <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume">  
+        </div>
+
+
+
+        
+          
+       
+    
+      </div>
+      <footer>
+        <div class="container">
+        <p><b>Autorzy Strony:</b></p>
+        <p>Mateusz Gorczyński 175493</p>
+        <p>Łukasz Raczkowski 176014</p>
+        <p>Nagrań dokonano w Audytorium nr 1 w starym budynku wydziału Elektroniki, Telekomunikacji i Informatyki Politechniki Gdańskiej</p>
+      </div>
+      </footer>
+    </div>
+    
+<script src="assets/js/main4.js"></script>
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"
+></script>
+<!--- AOS.js-->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  $(document).ready(function(){
+    $('.dropdown-submenu a.test').on("click", function(e){
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  });
+</script>
+
+
+<script>
+  $(document).ready(function() {
+    $("#cf7_controls").on('click', 'span', function() {
+      $("#cf7 img").removeClass("opaque");
+  
+      var newImage = $(this).index();
+  
+      $("#cf7 img").eq(newImage).addClass("opaque");
+  
+      $("#cf7_controls span").removeClass("selected");
+      $(this).addClass("selected");
+    });
+  });
+  
+    </script>
+
+<script>
+  $(document).ready(function() {
+    $("#cf8_controls").on('click', 'span', function() {
+      $("#cf8 img").removeClass("opaque1");
+  
+      var newImage = $(this).index();
+  
+      $("#cf8 img").eq(newImage).addClass("opaque1");
+  
+      $("#cf8_controls span").removeClass("selected");
+      $(this).addClass("selected");
+    });
+  });
+  
+    </script>
+
+
+
+
+ 
+</body>
+  
+</html>
+
